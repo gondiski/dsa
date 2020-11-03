@@ -17,4 +17,14 @@ class Hashtable
             @table[hash_value] = [string]
         end
     end
+
+    def lookup string
+        hash_value = calculate_hash_value(string)
+        if @table[hash_value] != nil
+            if @table[hash_value].include?(string)
+                return hash_value
+            end
+        end
+        "String not found"
+    end
 end
